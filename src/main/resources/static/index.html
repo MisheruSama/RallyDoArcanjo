@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="imagem/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="imagem/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="imagem/favicon.png">
+    <meta name="theme-color" content="#1A1A1A">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap and icons first, then Swiper, then custom styles so styles.css overrides where needed -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <title>Rally das Equipes</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#home">
+                <img src="imagem/logo.png" alt="Logo Rally das Equipes" class="navbar-logo me-2" loading="eager">
+                Rally das Equipes
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">
+                            <i class="bi bi-house-door-fill"></i>
+                            Início
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Ranking">
+                            <i class="bi bi-trophy-fill"></i>
+                            Ranking
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#premio">
+                            <i class="bi bi-gift-fill"></i>
+                            Premiação
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#regulamento">
+                            <i class="bi bi-book-fill"></i>
+                            Regulamento
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Cronograma">
+                            <i class="bi bi-calendar-event-fill"></i>
+                            Cronograma
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+        <section id="home">
+            <!-- Carrossel Coverflow -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="imagem/rally1.jpg" alt="Rally das Equipes 1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="imagem/rally2.jpg" alt="Rally das Equipes 2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="imagem/rally3.jpg" alt="Rally das Equipes 3">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="imagem/rally1.jpg" alt="Rally das Equipes 1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="imagem/rally2.jpg" alt="Rally das Equipes 2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="imagem/rally3.jpg" alt="Rally das Equipes 3">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="imagem/rally4.jpg" alt="Rally das Equipes 4">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <h2>Bem-vindo ao Rally das Equipes</h2>
+            <p>Onde a Missão é viver pelo propósito maior: O ganho de Almas.</p>
+        </section>
+        <section id="Ranking">
+            <h2>Qual será a Equipe Vencedora?</h2>
+            <div class="text-center mb-4">
+                <button class="btn btn-outline-warning" onclick="compartilharRanking()">
+                    <i class="bi bi-share-fill me-2"></i>
+                    Compartilhar Ranking
+                </button>
+            </div>
+            <div class="ranking-container">
+                <div class="table-responsive ranking-card">
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th style="width: 10%">Posição</th>
+                                <th style="width: 50%">Equipe</th>
+                                <th style="width: 20%">Pontos</th>
+                                <th style="width: 20%">bloco</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ranking-table-body">
+                            <!-- Os dados serão inseridos aqui via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section id="premio">
+            <h2>Premiação</h2>
+            <div class="premio-circle">
+                <img src="imagem/premio.png" alt="Prêmio do Rally das Equipes">
+            </div>
+            <p>A equipe vencedora desse mês receberá um prêmio especial, um rodizio de pizza para toda a equipe!</p>
+        </section>
+        <section id="regulamento">
+            <h2>Regulamento</h2>
+            <div class="rules-container">
+            <div class="rules-card">
+                <div class="rules-title-box"></div>
+                <h3>Pontuação por Atividade</h3>
+                </div>
+                <div class="rules-list"></div>
+                <div class="rule-item">
+                    <span class="rule-name">Algo a Mais</span>
+                    <span class="rule-points">150 pontos</span>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-name">Terça Feira</span>
+                    <span class="rule-points">50 pontos cada</span>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-name">Quarta Feira</span>
+                    <span class="rule-points">150 pontos</span>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-name">Quinta Feira</span>
+                    <span class="rule-points">25 pontos cada</span>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-name">Sexta-feira</span>
+                    <span class="rule-points">10 pontos cada</span>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-name">Encontro Jovem</span>
+                    <span class="rule-points">300 pontos</span>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-name">Domingo 9h30</span>
+                    <span class="rule-points">500 pontos</span>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-name">Fechamento Meta Domingo</span>
+                    <span class="rule-points">300 pontos</span>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-name">Maior Fechamento Domingo</span>
+                    <span class="rule-points">250 pontos</span>
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section id="Cronograma">
+            <h2>Cronograma Semanal de Invencível</h2>
+            <div class="schedule-container">
+                <div class="swiper scheduleSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Segunda -->
+                        <div class="swiper-slide schedule-card">
+                            <div class="schedule-image">
+                                <img src="imagem/segunda.png" alt="Segunda-feira">
+                            </div>
+                            <div class="schedule-content">
+                                <h3>Segunda-feira</h3>
+                                <div class="schedule-details">
+                                    <p><strong>ALGO A MAIS:</strong> 19:30</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Terça -->
+                        <div class="swiper-slide schedule-card">
+                            <div class="schedule-image">
+                                <img src="imagem/terca.png" alt="Terça-feira">
+                            </div>
+                            <div class="schedule-content">
+                                <h3>Terça-feira</h3>
+                                <div class="schedule-details">
+                                    <p><strong>NÚCLEOS E EVANGELIZAÇÃO:</strong> 18:30</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Quarta -->
+                        <div class="swiper-slide schedule-card">
+                            <div class="schedule-image">
+                                <img src="imagem/quarta.png" alt="Culto de Quarta">
+                            </div>
+                            <div class="schedule-content">
+                                <h3>Quarta-feira</h3>
+                                <div class="schedule-details">
+                                    <p><strong>NOITE DA SALVAÇÃO:</strong> 19:00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Quinta -->
+                        <div class="swiper-slide schedule-card">
+                            <div class="schedule-image">
+                                <img src="imagem/quinta.png" alt="Quinta-feira">
+                            </div>
+                            <div class="schedule-content">
+                                <h3>Quinta-feira</h3>
+                                <div class="schedule-details">
+                                    <p><strong>TERAPIA DO AMOR:</strong> 19:00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Sexta -->
+                        <div class="swiper-slide schedule-card">
+                            <div class="schedule-image">
+                                <img src="imagem/sexta.png" alt="Culto de Sexta">
+                            </div>
+                            <div class="schedule-content">
+                                <h3>Sexta-feira</h3>
+                                <div class="schedule-details">
+                                    <p><strong>DESMANCHE ESPIRITUAL:</strong> 10:00/19:00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Sábado -->
+                        <div class="swiper-slide schedule-card">
+                            <div class="schedule-image">
+                                <img src="imagem/sabado.png" alt="Sábado">
+                            </div>
+                            <div class="schedule-content">
+                                <h3>Sábado</h3>
+                                <div class="schedule-details">
+                                    <p><strong>ENCONTRO JOVEM:</strong> 15:30</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Domingo -->
+                        <div class="swiper-slide schedule-card">
+                            <div class="schedule-image">
+                                <img src="imagem/domingo.png" alt="Culto de Domingo">
+                            </div>
+                            <div class="schedule-content">
+                                <h3>Domingo</h3>
+                                <div class="schedule-details">
+                                    <p><strong>ENCONTRO COM DEUS</strong> 09:00</p>
+                                    <p><strong>ALMOÇO INVENCÍVEL</strong> 12:00</p>
+                                    <p><strong>BATE PAPO DAS EQUIPES:</strong> 14:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Navegação do Swiper -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+    
+
+    <!-- Scripts do Bootstrap e Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
